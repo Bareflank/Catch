@@ -2376,11 +2376,14 @@ namespace Catch {
 // #included from: catch_timer.h
 #define TWOBLUECUBES_CATCH_TIMER_H_INCLUDED
 
-#ifdef CATCH_PLATFORM_WINDOWS
-typedef unsigned long long uint64_t;
-#else
+// -----------------------------------------------------------------------------
+// bareflank: start
+// -----------------------------------------------------------------------------
+// compilation issue with cygwin
 #include <stdint.h>
-#endif
+// -----------------------------------------------------------------------------
+// bareflank: end
+// -----------------------------------------------------------------------------
 
 namespace Catch {
 
@@ -11336,4 +11339,3 @@ int main (int argc, char * const argv[]) {
 using Catch::Detail::Approx;
 
 #endif // TWOBLUECUBES_SINGLE_INCLUDE_CATCH_HPP_INCLUDED
-
