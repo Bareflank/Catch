@@ -216,4 +216,7 @@ if (NOT_SUBPROJECT)
 
     include( CPack )
 
+    add_library(CatchMain examples/000-CatchMain.cpp)
+    target_include_directories(CatchMain PRIVATE ${CMAKE_CURRENT_LIST_DIR}/single_include)
+    install(TARGETS CatchMain DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif(NOT_SUBPROJECT)
